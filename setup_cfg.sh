@@ -11,6 +11,7 @@ pushd .vim/bundle
 git clone git://github.com/ntpeters/vim-better-whitespace.git
 git clone https://github.com/bling/vim-airline
 git clone git://github.com/tpope/vim-fugitive.git
+git clone https://github.com/godlygeek/tabular
 git clone https://github.com/Valloric/YouCompleteMe
 pushd YouCompleteMe
 git submodule update --init --recursive
