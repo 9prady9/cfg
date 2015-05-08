@@ -1,27 +1,27 @@
 #
 # ~/.bashrc
 #
- 
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
- 
+
 alias ls='ls --color=auto'
- 
-# bind ctrl-r/s to up/down                                                                                                                                                                                         
+
+# bind ctrl-r/s to up/down
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
- 
+
 source /usr/share/git/completion/git-prompt.sh
- 
+
 export GIT_PS1_SHOWDIRTYSTATE=1
- 
+
 export PS1='\[\033[01;36m\]\u@\[\033[01;32m\]\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\]'
- 
+
 export EDITOR=vim
- 
+
 alias v='vim'
 alias e='emacs -nw'
- 
+
 export CUDA_PATH=/opt/cuda
 export AF_PATH=~/gitroot/arrayfire/build/release/package
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$AF_PATH/lib:$CUDA_PATH/lib64
