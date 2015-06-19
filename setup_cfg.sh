@@ -13,11 +13,7 @@ git clone https://github.com/bling/vim-airline
 git clone git://github.com/tpope/vim-fugitive.git
 git clone https://github.com/godlygeek/tabular
 git clone git://github.com/petRUShka/vim-opencl.git
-git clone https://github.com/Valloric/YouCompleteMe
-pushd YouCompleteMe
-git submodule update --init --recursive
-./install.sh
-popd
+git clone https://github.com/wting/rust.vim.git
 popd
 
 ln -s ~/gitroot/cfg/bash_rc .bashrc
