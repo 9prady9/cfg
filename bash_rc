@@ -11,7 +11,7 @@ alias ls='ls --color=auto'
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-source /usr/share/git/completion/git-prompt.sh
+source /home/pradeep/gitroot/cfg/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
@@ -22,8 +22,5 @@ export EDITOR=vim
 alias v='vim'
 alias e='emacs -nw'
 
-export CUDA_PATH=/opt/cuda
-export AF_PATH=~/gitroot/arrayfire/build/release/package
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$AF_PATH/lib:$CUDA_PATH/lib64
-
-export ANT_TWEAK_BAR_ROOT=~/Software/AntTweakBar
+export CUDA_PATH=/usr/local/cuda
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_PATH/lib64:$CUDA_PATH/nvvm/lib64
