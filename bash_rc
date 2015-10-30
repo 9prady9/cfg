@@ -23,7 +23,6 @@ alias v='vim'
 alias e='emacs -nw'
 
 export CUDA_PATH=/opt/cuda
-export AF_PATH=~/gitroot/arrayfire/build/release/package
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$AF_PATH/lib:$CUDA_PATH/lib64
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_PATH/lib64:$CUDA_PATH/nvvm/lib64
 
 export ANT_TWEAK_BAR_ROOT=~/Software/AntTweakBar
