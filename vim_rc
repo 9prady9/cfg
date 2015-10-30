@@ -173,12 +173,27 @@ set autoread
 set backupdir=~/.vim/backup
 set directory=~/.vim/swap
 
+" set automatic word wrapping
+set wrap
+set textwidth=100
+set formatoptions+=t
+
 " auto remove trailing white space for specified extensions
 autocmd BufWritePre *.c :%s/\s\+$//e
 autocmd BufWritePre *.cpp :%s/\s\+$//e
 autocmd BufWritePre *.h :%s/\s\+$//e
 autocmd BufWritePre *.cu :%s/\s\+$//e
 autocmd BufWritePre *.cl :%s/\s\+$//e
+
+function! Incr()
+    let a = line('.') - line("'<")
+    let c = virtcol("'<")
+    if a > 0
+        execute 'normal! '.c.'|'.a."\<C-a>"
+    endif
+    normal `<
+endfunction
+vnoremap <C-a> :call Incr()<CR>
 
 execute pathogen#infect()
 
