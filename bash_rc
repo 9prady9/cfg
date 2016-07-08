@@ -11,7 +11,7 @@ alias ls='ls --color=auto'
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-source /home/pradeep/gitroot/cfg/git-prompt.sh
+source ~/gitroot/cfg/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
