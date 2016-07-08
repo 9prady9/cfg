@@ -122,7 +122,7 @@ set confirm
 set cmdheight=2
 
 " Display line numbers on the left
-set number
+" set number
 :nmap <C-N><C-N> :set invnumber<CR>
 highlight LineNr ctermbg=DarkGray ctermfg=DarkMagenta
 
@@ -200,3 +200,6 @@ execute pathogen#infect()
 set t_Co=256
 
 let g:airline_theme = 'badwolf'
+
+au BufNewFile,BufRead *.cu set filetype=cuda
+au BufNewFile,BufRead *.cuh set filetype=cuda
