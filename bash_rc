@@ -11,6 +11,10 @@ alias ls='ls --color=auto'
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
 source ~/gitroot/cfg/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
