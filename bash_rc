@@ -25,6 +25,3 @@ export EDITOR=vim
 
 alias v='vim'
 alias e='emacs -nw'
-
-export CUDA_PATH=/usr/local/cuda
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_PATH/lib64:$CUDA_PATH/nvvm/lib64
