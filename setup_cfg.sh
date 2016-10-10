@@ -4,6 +4,8 @@ mkdir -p ~/.vim/{swap,backup,autoload,bundle}
 
 # Change to home directory
 pushd ~
+# backup existing bashrc file
+mv .bashrc .bashrc_bkp_`date +"%F"`
 # link the bash, git and vim rc files
 ln -s ~/gitroot/cfg/vim-pathogen/autoload/pathogen.vim .vim/autoload/pathogen.vim
 
