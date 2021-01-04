@@ -19,9 +19,6 @@
 [submodule "vim-opencl"]
 	path = vim-opencl
 	url = git://github.com/petRUShka/vim-opencl.git
-[submodule "rust.vim"]
-	path = rust.vim
-	url = https://github.com/wting/rust.vim.git
 [submodule "vim-glsl"]
 	path = vim-glsl
 	url = https://github.com/tikhomirov/vim-glsl
