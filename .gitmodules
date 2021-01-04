@@ -22,3 +22,6 @@
 [submodule "vim-glsl"]
 	path = vim-glsl
 	url = https://github.com/tikhomirov/vim-glsl
+[submodule "rust.vim"]
+	path = rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
