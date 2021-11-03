@@ -30,8 +30,8 @@
     untracked = cyan
 
 [user]
-	name = pradeep
-	email = pradeep@arrayfire.com
+	name = Pradeep Garigipati
+	email = pradeep.garigipati@gmail.com
 
 [push]
 	default = current

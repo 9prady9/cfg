@@ -16,19 +16,12 @@ source ~/gitroot/cfg/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 export PS1='\[\033[01;36m\]\u@\[\033[01;32m\]\h\[\033[01;34m\]
-\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\]\n'
+\w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
 export EDITOR=vim
 
 alias v='vim'
 alias e='emacs -nw'
 
-export INTEL_MKL_PATH=/opt/intel/compilers_and_libraries
 export CUDA_PATH=/opt/cuda
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_PATH/lib64:$CUDA_PATH/nvvm/lib64
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$INTEL_MKL_PATH/linux/mkl/lib/intel64
-
-export MICRO_TRUECOLOR=1
-
-# added by travis gem
-[ -f /home/pradeep/.travis/travis.sh ] && source /home/pradeep/.travis/travis.sh
