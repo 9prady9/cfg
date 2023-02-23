@@ -1,27 +1,27 @@
 [submodule "vim-better-whitespace"]
-	path = vim-better-whitespace
+	path = vim/vim-better-whitespace
 	url = git://github.com/ntpeters/vim-better-whitespace.git
 [submodule "vim-airline"]
-	path = vim-airline
+	path = vim/vim-airline
 	url = https://github.com/vim-airline/vim-airline
 [submodule "vim-airline-themes"]
-	path = vim-airline-themes
+	path = vim/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
 [submodule "vim-fugitive"]
-	path = vim-fugitive
+	path = vim/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "tabular"]
-	path = tabular
+	path = vim/tabular
 	url = https://github.com/godlygeek/tabular
 [submodule "vim-opencl"]
-	path = vim-opencl
+	path = vim/vim-opencl
 	url = git://github.com/petRUShka/vim-opencl.git
 [submodule "vim-glsl"]
-	path = vim-glsl
+	path = vim/vim-glsl
 	url = https://github.com/tikhomirov/vim-glsl
 [submodule "rust.vim"]
-	path = rust.vim
+	path = vim/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
 [submodule "vim-pathogen"]
-	path = vim-pathogen
+	path = vim/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
