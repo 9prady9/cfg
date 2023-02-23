@@ -96,13 +96,13 @@ endif
 " Vim with default settings does not allow easy switching between multiple files
 " in the same editor window. Users can use multiple split windows or multiple
 " tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files. One such option is the 'hidden' option, 
-" which allows you to re-use the same window and switch from an unsaved buffer 
+" allow easier switching between files. One such option is the 'hidden' option,
+" which allows you to re-use the same window and switch from an unsaved buffer
 " without saving it first. Also allows you to keep an undo history for multiple
 " files when re-using the same window in this way. Note that using persistent
-" undo also lets you undo in multiple files even in the same window, but is less 
-" efficient and is actually designed for keeping undo history after closing Vim 
-" entirely. Vim will complain if you try to quit without saving, and swap files 
+" undo also lets you undo in multiple files even in the same window, but is less
+" efficient and is actually designed for keeping undo history after closing Vim
+" entirely. Vim will complain if you try to quit without saving, and swap files
 " will keep you safe if your computer crashes.
 set hidden
 
@@ -124,14 +124,14 @@ set cmdheight=2
 " Display line numbers on the left
 " set number
 :nmap <C-N><C-N> :set invnumber<CR>
-highlight LineNr ctermbg=DarkGray ctermfg=DarkMagenta
+highlight LineNr ctermbg=DarkGray ctermfg=DarkYellow
 
 " enable auto expand tabs, and expand them to 2 spaces
 set tabstop=4
 set expandtab
 
 " change # of space characters used for indentation
-set shiftwidth=4
+set shiftwidth=2
 
 " do not wrap lines
 set nowrap
@@ -203,3 +203,14 @@ let g:airline_theme = 'badwolf'
 
 au BufNewFile,BufRead *.cu set filetype=cuda
 au BufNewFile,BufRead *.cuh set filetype=cuda
+autocmd BufWritePre * :%s/\s\+$//e
+
+function FormatBuffer()
+  if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
+    let cursor_pos = getpos('.')
+    :%!clang-format
+    call setpos('.', cursor_pos)
+  endif
+endfunction
+
+autocmd BufWritePre *.h,*.hpp,*.c,*.cpp :call FormatBuffer()

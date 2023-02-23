@@ -35,3 +35,7 @@
 
 [push]
 	default = current
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
