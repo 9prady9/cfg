@@ -17,10 +17,20 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 export PS1='\[\033[01;36m\]\u@\[\033[01;32m\]\h\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\n\[\033[01;31m\]\$\[\033[00m\] '
 
-export EDITOR=vim
-
-alias v='vim'
-alias e='emacs -nw'
+alias v='nvim'
+export EDITOR=nvim
+alias gbg="git log --graph --all --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 export CUDA_HOME=/opt/cuda
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_PATH/lib64:$CUDA_PATH/nvvm/lib64
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_HOME/lib64:$CUDA_HOME/nvvm/lib64
+export PATH=$PATH:$CUDA_HOME/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
+
+export GPG_TTY=$(tty)
+export CMAKE_CUDA_COMPILER_LAUNCHER="ccache"
+export CMAKE_CUDA_LINKER_LAUNCHER="ccache"
+export CMAKE_CXX_COMPILER_LAUNCHER="ccache"
+export CMAKE_CXX_LINKER_LAUNCHER="ccache"
+export CMAKE_C_COMPILER_LAUNCHER="ccache"
+export CMAKE_C_LINKER_LAUNCHER="ccache"

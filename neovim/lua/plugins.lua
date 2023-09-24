@@ -16,10 +16,11 @@ return require('packer').startup(function(use)
 
 
   -- UI Plugins
+  use 'xiyaowong/transparent.nvim'
   use 'lewis6991/impatient.nvim'
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use 'lukas-reineke/indent-blankline.nvim'
   use {
@@ -38,7 +39,7 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = {
       {'nvim-lua/plenary.nvim'},
-      { "kyazdani42/nvim-web-devicons", opt = true },
+      { "nvim-tree/nvim-web-devicons", opt = true },
       { "kdheepak/lazygit.vim" }
     },
     config = function()
@@ -48,7 +49,15 @@ return require('packer').startup(function(use)
   use "marko-cerovac/material.nvim"
   use "RRethy/vim-illuminate"
   use("onsails/lspkind-nvim") -- pictograms for lsp completion items
-  use 'j-hui/fidget.nvim'
+  use {
+  'j-hui/fidget.nvim',
+  tag = 'legacy',
+  config = function()
+    require("fidget").setup {
+      -- options
+    }
+  end,
+  }
   use {
     "weilbith/nvim-code-action-menu",
     cmd = 'CodeActionMenu',
@@ -65,10 +74,10 @@ return require('packer').startup(function(use)
           ts_update()
       end,
   }
-  use "kyazdani42/nvim-web-devicons"
+  use "nvim-tree/nvim-web-devicons"
   use {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {
         -- your configuration comes here
