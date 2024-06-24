@@ -4,7 +4,6 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # Change to home directory
 pushd ~
-mkdir -p ~/.config/nvim
 
 # backup existing bashrc file
 mv .bashrc .bashrc_bkp_`date +"%F"`
