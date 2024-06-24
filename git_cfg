@@ -1,3 +1,9 @@
+[rerere]
+  enabled = true
+
+[rebase]
+  autostash = true
+
 [alias]
     ci = commit
     co = checkout

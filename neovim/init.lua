@@ -2,6 +2,7 @@
 -- Include Plugins First
 ]]
 require('plugins')
+require("peek").setup()
 
 --[[
 -- Include individual plugin specific modules

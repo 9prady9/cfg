@@ -10,7 +10,7 @@ vim.api.nvim_set_keymap('n','<Leader>of', ':Telescope oldfiles<CR>', { noremap =
 
 vim.api.nvim_set_keymap('n','<Leader>fx', ':CodeActionMenu<CR>', { noremap = true })
 
-vim.api.nvim_set_keymap('n','<Leader>lg', ':LazyGit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n','<Leader>LG', ':LazyGit<CR>', { noremap = true })
 
 vim.api.nvim_set_keymap('n',';', ':', { noremap = true })
 
@@ -24,3 +24,11 @@ vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<Leader>tb', ':TagbarToggle<CR>', { noremap = false })
 vim.api.nvim_set_keymap('n', '<Leader>nt', ':NERDTreeToggle<CR>', { noremap = true })
+
+vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<A-Return>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-Up>", 'copilot#Previous()', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-Down>", 'copilot#Next()', { silent = true, expr = true })

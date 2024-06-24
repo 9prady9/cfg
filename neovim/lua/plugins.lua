@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
   use 'preservim/nerdtree'
   use 'preservim/tagbar'
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = {
       {'nvim-lua/plenary.nvim'},
       { "nvim-tree/nvim-web-devicons", opt = true },
@@ -51,7 +51,6 @@ return require('packer').startup(function(use)
   use("onsails/lspkind-nvim") -- pictograms for lsp completion items
   use {
   'j-hui/fidget.nvim',
-  tag = 'legacy',
   config = function()
     require("fidget").setup {
       -- options
@@ -63,6 +62,16 @@ return require('packer').startup(function(use)
     cmd = 'CodeActionMenu',
   }
   use { 'glepnir/dashboard-nvim' }
+  use {
+    'toppair/peek.nvim',
+    opt = false,
+  }
+  use {
+    "kwkarlwang/bufresize.nvim",
+    config = function()
+        require("bufresize").setup()
+    end
+  }
 
 
   -- Editing Plugins
@@ -102,6 +111,7 @@ return require('packer').startup(function(use)
     "ray-x/lsp_signature.nvim", -- Function signature hint view
   }
   use 'godlygeek/tabular'
+  use 'github/copilot.vim'
 
 
   -- Automatically set up your configuration after cloning packer.nvim
