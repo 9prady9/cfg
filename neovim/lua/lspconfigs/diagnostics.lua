@@ -46,21 +46,6 @@ end
 M.set_mappings = function(_, bufnr)
     vim.keymap.set({ "n" }, "]d", vim.diagnostic.goto_next, { buffer = bufnr })
     vim.keymap.set({ "n" }, "[d", vim.diagnostic.goto_prev, { buffer = bufnr })
-    local ok_telescope, telescope_builtin = pcall(require, "telescope.builtin")
-    if ok_telescope then
-        vim.keymap.set(
-            { "n" },
-            "<leader>df",
-            "<Cmd>Telescope diagnostics<Cr>",
-            { buffer = bufnr }
-        )
-        vim.keymap.set({ "n" }, "<leader>lds", function()
-            telescope_builtin.lsp_document_symbols()
-        end, { buffer = bufnr })
-        vim.keymap.set({ "n" }, "<leader>ldw", function()
-            telescope_builtin.lsp_dynamic_workspace_symbols()
-        end, { buffer = bufnr })
-    end
 end
 
 return M

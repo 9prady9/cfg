@@ -55,14 +55,14 @@ M.set_mappings = function(_, bufnr) -- (client, bufnr)
         vim.lsp.buf.format,
         { buffer = bufnr }
     )
-    if OK_TELESCOPE then
-        vim.keymap.set(
-            { "n" },
-            "<leader>rf",
-            TELESCOPE_BUILTIN.lsp_references,
-            { buffer = bufnr }
-        )
-    end
+    --if OK_TELESCOPE then
+    --    vim.keymap.set(
+    --        { "n" },
+    --        "<leader>rf",
+    --        TELESCOPE_BUILTIN.lsp_references,
+    --        { buffer = bufnr }
+    --    )
+    --end
 end
 
 M.set_autocmds = function(client, _) -- (client, bufnr)

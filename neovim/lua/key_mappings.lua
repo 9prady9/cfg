@@ -4,13 +4,15 @@ vim.g.mapleader = ' '
 
 vim.api.nvim_set_keymap('n','<Leader>h', ':set hlsearch!<CR>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n','<Leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n','<Leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n','<Leader>of', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n','<Leader>ff', ':FzfLua files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n','<Leader>lg', ':FzfLua live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n','<Leader>bf', ':FzfLua buffers<CR>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n','<Leader>fx', ':CodeActionMenu<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n','<Leader>fx', ':FzfLua lsp_code_actions<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n','<Leader>ldd', ':FzfLua diagnostics_document<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n','<Leader>ldw', ':FzfLua diagnostics_workspace<CR>', { noremap = true })
 
-vim.api.nvim_set_keymap('n','<Leader>LG', ':LazyGit<CR>', { noremap = true })
+--vim.api.nvim_set_keymap('n','<Leader>LG', ':LazyGit<CR>', { noremap = true })
 
 vim.api.nvim_set_keymap('n',';', ':', { noremap = true })
 

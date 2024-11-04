@@ -35,17 +35,25 @@ return require('packer').startup(function(use)
   }
   use 'preservim/nerdtree'
   use 'preservim/tagbar'
-  use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = {
-      {'nvim-lua/plenary.nvim'},
-      { "nvim-tree/nvim-web-devicons", opt = true },
-      { "kdheepak/lazygit.vim" }
-    },
-    config = function()
-	require("telescope").load_extension("lazygit")
-    end,
-  }
+  --use {
+  --  'nvim-telescope/telescope.nvim', branch = '0.1.x',
+  --  requires = {
+  --    {'nvim-lua/plenary.nvim'},
+  --    { "nvim-tree/nvim-web-devicons", opt = true },
+  --    { "kdheepak/lazygit.vim" }
+  --  },
+  --  config = function()
+  --  require("telescope").load_extension("lazygit")
+  --  end,
+  --}
+  -- nvim v0.7.2
+  use({
+      "kdheepak/lazygit.nvim",
+      -- optional for floating window border decoration
+      requires = {
+          "nvim-lua/plenary.nvim",
+      },
+  })
   use "marko-cerovac/material.nvim"
   use "RRethy/vim-illuminate"
   use("onsails/lspkind-nvim") -- pictograms for lsp completion items
@@ -57,14 +65,29 @@ return require('packer').startup(function(use)
     }
   end,
   }
-  use {
-    "weilbith/nvim-code-action-menu",
-    cmd = 'CodeActionMenu',
+  use { "ibhagwan/fzf-lua",
+    requires = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("fzf-lua").setup({
+        defaults = {
+          git_icons = true,
+          file_icons = true,
+          color_icons = true,
+        }
+      })
+    end
   }
   use { 'glepnir/dashboard-nvim' }
   use {
-    'toppair/peek.nvim',
-    opt = false,
+    "toppair/peek.nvim",
+    build = "deno task build:fast",
+    config = function()
+      require("peek").setup({
+        app = { 'chromium', '--new-window' }
+      })
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+    end,
   }
   use {
     "kwkarlwang/bufresize.nvim",
