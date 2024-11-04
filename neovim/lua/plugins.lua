@@ -26,34 +26,10 @@ return require('packer').startup(function(use)
   use {
     "folke/which-key.nvim",
     config = function()
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("which-key").setup {}
     end
   }
   use 'preservim/nerdtree'
-  use 'preservim/tagbar'
-  --use {
-  --  'nvim-telescope/telescope.nvim', branch = '0.1.x',
-  --  requires = {
-  --    {'nvim-lua/plenary.nvim'},
-  --    { "nvim-tree/nvim-web-devicons", opt = true },
-  --    { "kdheepak/lazygit.vim" }
-  --  },
-  --  config = function()
-  --  require("telescope").load_extension("lazygit")
-  --  end,
-  --}
-  -- nvim v0.7.2
-  use({
-      "kdheepak/lazygit.nvim",
-      -- optional for floating window border decoration
-      requires = {
-          "nvim-lua/plenary.nvim",
-      },
-  })
   use "marko-cerovac/material.nvim"
   use "RRethy/vim-illuminate"
   use("onsails/lspkind-nvim") -- pictograms for lsp completion items

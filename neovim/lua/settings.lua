@@ -9,3 +9,5 @@ vim.opt.number = true
 
 vim.g.material_style = "darker"
 vim.cmd 'colorscheme material'
+
+vim.lsp.protocol.OFFSET_ENCODING = 'utf-8'

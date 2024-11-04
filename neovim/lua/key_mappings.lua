@@ -11,8 +11,7 @@ vim.api.nvim_set_keymap('n','<Leader>bf', ':FzfLua buffers<CR>', { noremap = tru
 vim.api.nvim_set_keymap('n','<Leader>fx', ':FzfLua lsp_code_actions<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n','<Leader>ldd', ':FzfLua diagnostics_document<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n','<Leader>ldw', ':FzfLua diagnostics_workspace<CR>', { noremap = true })
-
---vim.api.nvim_set_keymap('n','<Leader>LG', ':LazyGit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n','<Leader>lr', ':FzfLua lsp_references<CR>', { noremap = true })
 
 vim.api.nvim_set_keymap('n',';', ':', { noremap = true })
 
