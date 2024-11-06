@@ -30,4 +30,13 @@ function FormatBuffer()
 endfunction
 
 autocmd BufWritePre *.h,*.hpp,*.c,*.cpp :call FormatBuffer()
+
+set foldmethod=syntax
+set foldexpr=nvim_treesitter#foldexpr()
+
+" Automatically save the fold state when leaving a buffer
+autocmd BufWinLeave * mkview
+
+" Automatically restore the fold state when opening a file
+autocmd BufReadPost * silent! loadview
 ]]
