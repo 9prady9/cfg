@@ -17,8 +17,10 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 export PS1='\[\033[01;36m\]\u@\[\033[01;32m\]\h\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\n\[\033[01;31m\]λ\[\033[00m\] '
 
-alias v='nvim'
+export PATH="$HOME/Software/neomvim/bin:$PATH"
 export EDITOR=nvim
+
+alias v='nvim'
 alias gbg="git log --graph --all --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 export CUDA_HOME=/usr/local/cuda
@@ -34,3 +36,6 @@ export CMAKE_CXX_COMPILER_LAUNCHER="ccache"
 export CMAKE_CXX_LINKER_LAUNCHER="ccache"
 export CMAKE_C_COMPILER_LAUNCHER="ccache"
 export CMAKE_C_LINKER_LAUNCHER="ccache"
+export CMAKE_EXPORT_COMPILE_COMMANDS="ON"
+export ASAN_OPTIONS="protect_shadow_gap=0:detect_leaks=1"
+export CMAKE_BUILD_PARALLEL_LEVEL=16
