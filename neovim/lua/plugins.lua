@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
   use("onsails/lspkind-nvim") -- pictograms for lsp completion items
   use {
   'j-hui/fidget.nvim',
+  tag = 'v1.4.5',
   config = function()
     require("fidget").setup {
       -- options
@@ -53,7 +54,31 @@ return require('packer').startup(function(use)
       })
     end
   }
-  use { 'glepnir/dashboard-nvim' }
+  use {
+    "NeogitOrg/neogit",
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {'ibhagwan/fzf-lua'}
+    },
+    config = function()
+      require("neogit").setup{}
+    end
+  }
+  --use {
+  --  'nvimdev/dashboard-nvim',
+  --  requires = {'nvim-tree/nvim-web-devicons'},
+  --  event = 'VimEnter',
+  --  config = function()
+  --    require('dashboard').setup {
+  --      center = {
+  --        {desc = " 🔍 Find File          ", action = "FzfLua files", shortcut = "SPC f f"},
+  --        {desc = " 🔍 Search Text        ", action = "FzfLua live_grep", shortcut = "SPC l g"},
+  --        {desc = "   Recent Files       ", action = "FzfLua oldfiles", shortcut = "SPC o f"},
+  --      },
+  --      footer = {"KISS - Keep It Simple Stupid!"}
+  --    }
+  --  end
+  --}
   use {
     "toppair/peek.nvim",
     build = "deno task build:fast",

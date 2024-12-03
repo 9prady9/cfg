@@ -1,4 +1,5 @@
 vim.cmd [[
+
 highlight LineNr ctermbg=DarkGray ctermfg=DarkYellow
 
 autocmd BufWritePre *.c :%s/\s\+$//e
