@@ -17,7 +17,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 export PS1='\[\033[01;36m\]\u@\[\033[01;32m\]\h\[\033[01;34m\]\w\[\033[01;33m\]$(__git_ps1)\n\[\033[01;31m\]λ\[\033[00m\] '
 
-export PATH="$HOME/Software/neomvim/bin:$PATH"
+export PATH="$HOME/Software/neovim/bin:$PATH"
 export EDITOR=nvim
 
 alias v='nvim'
